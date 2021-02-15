@@ -1,10 +1,11 @@
-create table web_members(
-	email varchar2(100),
-	pw varchar2(100),
-	tel varchar2(100),
-	address varchar2(100)
+create table user_info(
+	id varchar2(40),
+	pw varchar2(80),
+	tel varchar2(80),
+	license varchar2(40)
 )
 
-insert into WEB_MEMBERS values('test','test','test','test')
+insert into user_info values('test','123','010-0000-0000','123456789')
 
-select * from WEB_MEMBERS
+select * from user_info
+

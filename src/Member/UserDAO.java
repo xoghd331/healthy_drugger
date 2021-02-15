@@ -7,13 +7,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class MemberDAO {
+public class UserDAO {
 	
 	int cnt = 0;
 	PreparedStatement psmt =null;
 	Connection conn = null;
 	ResultSet rs = null;
-	MemberDTO info = null;
+	UserDTO info = null;
 	
 	public void conn() {
 		try {
@@ -47,18 +47,18 @@ public class MemberDAO {
 		}
 	}
 	
-	public int join(MemberDTO dto) {
+	public int join(UserDTO dto) {
 		try {
 			conn();
 			
-			String sql = "insert into WEB_MEMBERS values(?,?,?,?)";
+			String sql = "insert into user_info values(?,?,?,?)";
 			
 			psmt = conn.prepareStatement(sql);
 			
-			psmt.setString(1, dto.getEmail());
+			psmt.setString(1, dto.getId());
 			psmt.setString(2, dto.getPw());
 			psmt.setString(3, dto.getTel());
-			psmt.setString(4, dto.getAddr());
+			psmt.setString(4, dto.getLicense());
 			
 			cnt = psmt.executeUpdate();
 		}
@@ -71,26 +71,26 @@ public class MemberDAO {
 		return cnt;
 	}
 	
-	public MemberDTO login(MemberDTO dto) {
+	public UserDTO login(UserDTO dto) {
 		try {
 			conn();
 			
-			String sql = "select from web_members where email = ? and pw = ?";
+			String sql = "select from user_info where id = ? and pw = ?";
 			
 			psmt = conn.prepareStatement(sql);
 			
-			psmt.setString(1, dto.getEmail());
+			psmt.setString(1, dto.getId());
 			psmt.setString(2, dto.getPw());
 			
 			rs = psmt.executeQuery();
 			
 			if(rs.next()) {
-				String email = rs.getString("email");
+				String id = rs.getString("id");
 				String pw = rs.getString("pw");
 				String tel = rs.getString("tel");
 				String addr = rs.getString("address");
 				
-				info = new MemberDTO(email, pw, tel, addr);
+				info = new UserDTO(id, pw, tel, addr);
 			}
 		}
 		catch(Exception e){
@@ -102,18 +102,18 @@ public class MemberDAO {
 		return info;
 	}
 	
-	public int update(MemberDTO dto) {
+	public int update(UserDTO dto) {
 		try {
 			conn();
 			
-			String sql = "update web_members set pw=?, tel=?, address=? where email=?";
+			String sql = "update user_info set pw=?, tel=?, address=? where id=?";
 			
 			psmt = conn.prepareStatement(sql);
 			
 			psmt.setString(1, dto.getPw());
 			psmt.setString(2, dto.getTel());
-			psmt.setString(3, dto.getAddr());
-			psmt.setString(4, dto.getEmail());
+			psmt.setString(3, dto.getLicense());
+			psmt.setString(4, dto.getId());
 			
 			cnt = psmt.executeUpdate();
 		}
@@ -126,25 +126,25 @@ public class MemberDAO {
 		return cnt;
 	}
 	
-	public ArrayList<MemberDTO> selectMember(){
-		ArrayList<MemberDTO> list = new ArrayList<MemberDTO>();
+	public ArrayList<UserDTO> selectMember(){
+		ArrayList<UserDTO> list = new ArrayList<UserDTO>();
 		
 		try {
 			conn();
 			
-			String sql = "select * from web_members";
+			String sql = "select * from user_info";
 			
 			psmt = conn.prepareStatement(sql);
 			
 			rs = psmt.executeQuery();
 			
 			while(rs.next()) {
-				String email = rs.getString("email");
+				String id = rs.getString("id");
 				String pw = rs.getString("pw");
 				String tel = rs.getString("tel");
 				String addr = rs.getString("address");
 				
-				info = new MemberDTO(email, pw, tel, addr);
+				info = new UserDTO(id, pw, tel, addr);
 				list.add(info);
 			}
 		}
@@ -163,7 +163,7 @@ public class MemberDAO {
 		try {
 			conn();
 			
-			String sql = "select * from web_members where email = ?";
+			String sql = "select * from user_info where id = ?";
 			
 			psmt = conn.prepareStatement(sql);
 			
