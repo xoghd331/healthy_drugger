@@ -88,9 +88,9 @@ public class UserDAO {
 				String id = rs.getString("id");
 				String pw = rs.getString("pw");
 				String tel = rs.getString("tel");
-				String addr = rs.getString("address");
+				String license = rs.getString("license");
 				
-				info = new UserDTO(id, pw, tel, addr);
+				info = new UserDTO(id, pw, tel, license);
 			}
 		}
 		catch(Exception e){
@@ -106,7 +106,7 @@ public class UserDAO {
 		try {
 			conn();
 			
-			String sql = "update user_info set pw=?, tel=?, address=? where id=?";
+			String sql = "update user_info set pw=?, tel=?, license=? where id=?";
 			
 			psmt = conn.prepareStatement(sql);
 			
@@ -142,9 +142,9 @@ public class UserDAO {
 				String id = rs.getString("id");
 				String pw = rs.getString("pw");
 				String tel = rs.getString("tel");
-				String addr = rs.getString("address");
+				String license = rs.getString("license");
 				
-				info = new UserDTO(id, pw, tel, addr);
+				info = new UserDTO(id, pw, tel, license);
 				list.add(info);
 			}
 		}
