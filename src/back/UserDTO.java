@@ -1,4 +1,4 @@
-package Member;
+package back;
 
 public class UserDTO {
 	
