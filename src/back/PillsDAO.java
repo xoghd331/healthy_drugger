@@ -77,4 +77,26 @@ public class PillsDAO {
 		}
 		return cnt;
 	}
+	
+	public int deletePills(PillsDTO dto) {
+		
+		try {
+			conn();
+			
+			String sql = "delete from pills where name = ?";
+			
+			psmt = conn.prepareStatement(sql);
+			
+			psmt.setString(1, dto.getName());
+			
+			cnt = psmt.executeUpdate();
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+		finally {
+			close();
+		}
+		return cnt;
+	}
 }
