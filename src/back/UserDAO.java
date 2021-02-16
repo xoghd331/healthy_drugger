@@ -17,12 +17,15 @@ public class UserDAO {
 	
 	public void conn() {
 		try {
+			// class 찾기 : 이클립스 - DB 사이에 통로를 만들어 주는 역할
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			
+			// DB의 문을 열 수 있는 주소와 아이디, 비밀번호
 			String url = "jdbc:oracle:thin:@localhost:1521:xe";
 			String dbid = "hr";
 			String dbpw = "hr";
 			
+			// DB문을 열 수 있는 카드키
 			conn = DriverManager.getConnection(url, dbpw, dbid);
 		}
 		catch(Exception e){
@@ -48,6 +51,10 @@ public class UserDAO {
 	}
 	
 	public int join(UserDTO dto) {
+		
+		// 1. lib 폴더에 jar 넣어주기
+
+		// 2. 동적 로딩방식
 		try {
 			conn();
 			
@@ -126,7 +133,8 @@ public class UserDAO {
 		return cnt;
 	}
 	
-	public ArrayList<UserDTO> selectMember(){
+	public ArrayList<UserDTO> selectUser(){
+		
 		ArrayList<UserDTO> list = new ArrayList<UserDTO>();
 		
 		try {
@@ -158,6 +166,7 @@ public class UserDAO {
 	}
 	
 	public boolean idCheck(String id) {
+		
 		boolean check = false;
 		
 		try {
