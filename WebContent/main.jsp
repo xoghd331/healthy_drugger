@@ -73,7 +73,7 @@
 						</li>
 						<li><a href="left-sidebar.html">영양제 검색</a></li>
 						<li><a href="right-sidebar.html">건강 이슈</a></li>
-						<li><a href="issue.html">건강 이슈</a></li>
+						<li><a href="issue.jsp">건강 이슈</a></li>
 					</ul>
 				</nav>
 
