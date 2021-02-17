@@ -15,7 +15,7 @@
 
 <nav id="login">	
 <ul>
-	<form action="login" method="post">
+	<form action="../login" method="post">
 		<fieldset>
 			<legend>로그인</legend>
 			<p><label>아이디<input type="text"  placeholder="ID을 입력하세요" name = "id"></label></p>
