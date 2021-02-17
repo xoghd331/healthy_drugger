@@ -3107,3 +3107,27 @@ input, select, textarea {
 
 	}
 	
+/* 페이징 */
+ .paging {
+        text-align: center;
+    }
+    .paging a {
+        /*
+        display: inline-block 인라인 요소의 특징과 블록 요소의 특징을 모두 갖는다
+        크기를 가질 수 있으며 텍스트 정렬도 적용받는다
+        */
+        display: inline-block;
+        
+        font-weight: bold;
+        text-decoration: none;
+        padding: 5px 8px;
+        border: 1px solid #ccc;
+        color: #000;
+        background-color: #F5F5DC;
+    }
+    /* 현재 페이징에 select 클래스를 적용한다*/
+    .paging a.select {
+        color: #fff;
+        background-color: #FFA7A7;
+    }
+	
