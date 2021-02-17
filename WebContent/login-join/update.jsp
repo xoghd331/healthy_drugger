@@ -11,7 +11,7 @@
 <%
 			UserDTO info = (UserDTO)session.getAttribute("info");
 %>
-	<form action="update" method="post">
+	<form action="../update" method="post">
 		<fieldset>
 			<legend>회원정보수정</legend>
 			<p><label><%=info.getId() %></label></p>
