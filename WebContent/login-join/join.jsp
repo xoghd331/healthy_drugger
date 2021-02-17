@@ -7,7 +7,7 @@
 <title>회원가입 페이지</title>
 </head>
 <body>
-	<form action="join" method="post">
+	<form action="../join" method="post">
 		<fieldset>
 			<legend>회원가입</legend>
 			<p><label>아이디<input type="text"  placeholder="ID을 입력하세요" name = "id"></label></p>
