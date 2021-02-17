@@ -16,7 +16,7 @@
 				<header id="header">
 					<div class="logo container">
 						<div>
-							<h1><a href="main.html" id="logo">건강한 약쟁이</a></h1>
+							<h1><a href="main.jsp" id="logo">건강한 약쟁이</a></h1>
 							<p>와 함께 만드는 건강한 습관</p>
 						</div>
 					</div>
@@ -25,7 +25,7 @@
 			<!-- 카테고리 Nav -->
 				<nav id="nav">
 					<ul>
-						<li><a href="main.html">Home</a></li>
+						<li><a href="main.jsp">Home</a></li>
 						<li>
 							<a href="#">커뮤니티</a>
 							<ul>
