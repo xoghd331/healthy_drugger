@@ -37,3 +37,5 @@ create table issue (
 CREATE SEQUENCE issue_seq
     START WITH 1
     INCREMENT BY 1;
+    
+select * from ISSUE
