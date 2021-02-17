@@ -20,10 +20,14 @@ public class login extends HttpServlet {
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
 	
+		System.out.println("[Login] id : "+id);
+		System.out.println("[Login] pw : "+pw);
+		
 		UserDAO dao = new UserDAO();
 		UserDTO dto = new UserDTO(id, pw);
 		
 		UserDTO info = dao.login(dto);
+		System.out.println(info);
 		
 		if (info != null) {
 			System.out.println("로그인 성공");
@@ -33,7 +37,7 @@ public class login extends HttpServlet {
 		} else {
 			System.out.println("로그인 실패");
 		}
-		response.sendRedirect(/* "main페이지" */);
+		response.sendRedirect("main.jsp");
 	}
 
 }
