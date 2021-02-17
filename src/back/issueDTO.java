@@ -18,6 +18,15 @@ public class issueDTO {
 		this.content = content;
 		this.available = available;
 	}
+	
+	public issueDTO(String title, String user_id, String content) {
+		super();
+		this.title = title;
+		this.user_id = user_id;
+		this.content = content;
+	}
+
+
 
 	public int getNum() {
 		return num;

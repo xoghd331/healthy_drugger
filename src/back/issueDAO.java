@@ -89,7 +89,7 @@ public class issueDAO {
 	}
 	
 	//글쓰기
-	public int write(issueDTO dto) {
+	public int write(String title, String user_id, String content) {
 		try {
 			conn();
 			
@@ -98,10 +98,10 @@ public class issueDAO {
 			psmt = conn.prepareStatement(sql);
 			
 			psmt.setInt(1, getNext());
-			psmt.setString(2, dto.getTitle());
-			psmt.setString(3, dto.getUser_id());
-			psmt.setString(4, dto.getUp_date());
-			psmt.setString(5, dto.getContent());
+			psmt.setString(2, title);
+			psmt.setString(3, user_id);
+			psmt.setString(4, getDate());
+			psmt.setString(5, content);
 			psmt.setInt(6, 1);	//글의 유효 번호
 			
 			return psmt.executeUpdate();
