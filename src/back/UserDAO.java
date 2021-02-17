@@ -82,7 +82,7 @@ public class UserDAO {
 		try {
 			conn();
 			
-			String sql = "select from user_info where id = ? and pw = ?";
+			String sql = "select * from user_info where id = ? and pw = ?";
 			
 			psmt = conn.prepareStatement(sql);
 			
