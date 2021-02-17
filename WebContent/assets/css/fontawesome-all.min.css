@@ -5755,33 +5755,33 @@ to {
 }
 
 @font-face {
-	font-family: "Font Awesome 5 Brands";
+	font-family: "GyeonggiTitleM";
 	font-style: normal;
 	font-weight: normal;
 	font-display: auto;
-	src: url(../webfonts/fa-brands-400.eot);
-	src: url(../webfonts/fa-brands-400.eot?#iefix)
-		format("embedded-opentype"), url(../webfonts/fa-brands-400.woff2)
-		format("woff2"), url(../webfonts/fa-brands-400.woff) format("woff"),
-		url(../webfonts/fa-brands-400.ttf) format("truetype"),
-		url(../webfonts/fa-brands-400.svg#fontawesome) format("svg")
+	src: url(../webfonts/GyeonggiTitleM.eot);
+	src: url(../webfonts/GyeonggiTitleM.eot?#iefix)
+		format("embedded-opentype"), url(../webfonts/GyeonggiTitleM.woff2)
+		format("woff2"), url(../webfonts/GyeonggiTitleM.woff) format("woff"),
+		url(../webfonts/GyeonggiTitleM.ttf) format("truetype"),
+		url(../webfonts/GyeonggiTitleM.svg#fontawesome) format("svg")
 }
 
 .fab {
-	font-family: "Font Awesome 5 Brands"
+	font-family: "GyeonggiTitleM"
 }
 
 @font-face {
-	font-family: "Font Awesome 5 Free";
+	font-family: "GyeonggiTitleL";
 	font-style: normal;
 	font-weight: 400;
 	font-display: auto;
-	src: url(../webfonts/fa-regular-400.eot);
-	src: url(../webfonts/fa-regular-400.eot?#iefix)
-		format("embedded-opentype"), url(../webfonts/fa-regular-400.woff2)
-		format("woff2"), url(../webfonts/fa-regular-400.woff) format("woff"),
-		url(../webfonts/fa-regular-400.ttf) format("truetype"),
-		url(../webfonts/fa-regular-400.svg#fontawesome) format("svg")
+	src: url(../webfonts/GyeonggiTitleL.eot);
+	src: url(../webfonts/GyeonggiTitleL.eot?#iefix)
+		format("embedded-opentype"), url(../webfonts/GyeonggiTitleL.woff2)
+		format("woff2"), url(../webfonts/GyeonggiTitleL.woff) format("woff"),
+		url(../webfonts/GyeonggiTitleL.ttf) format("truetype"),
+		url(../webfonts/GyeonggiTitleL.svg#fontawesome) format("svg")
 }
 
 .far {
@@ -5789,20 +5789,20 @@ to {
 }
 
 @font-face {
-	font-family: "Font Awesome 5 Free";
+	font-family: "GyeonggiTitleL";
 	font-style: normal;
 	font-weight: 900;
 	font-display: auto;
-	src: url(../webfonts/fa-solid-900.eot);
-	src: url(../webfonts/fa-solid-900.eot?#iefix)
-		format("embedded-opentype"), url(../webfonts/fa-solid-900.woff2)
-		format("woff2"), url(../webfonts/fa-solid-900.woff) format("woff"),
-		url(../webfonts/fa-solid-900.ttf) format("truetype"),
-		url(../webfonts/fa-solid-900.svg#fontawesome) format("svg")
+	src: url(../webfonts/GyeonggiTitleL.eot);
+	src: url(../webfonts/GyeonggiTitleL.eot?#iefix)
+		format("embedded-opentype"), url(../webfonts/GyeonggiTitleL.woff2)
+		format("woff2"), url(../webfonts/GyeonggiTitleL.woff) format("woff"),
+		url(../webfonts/GyeonggiTitleL.ttf) format("truetype"),
+		url(../webfonts/GyeonggiTitleL.svg#fontawesome) format("svg")
 }
 
 .fa, .far, .fas {
-	font-family: "Font Awesome 5 Free"
+	font-family: "GyeonggiTitleL"
 }
 
 .fa, .fas {
