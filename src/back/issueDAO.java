@@ -89,20 +89,18 @@ public class issueDAO {
 	}
 	
 	//글쓰기
-	public int write(String title, String user_id, String content) {
+	public int write(issueDTO dto) {
 		try {
 			conn();
 			
-			String sql = "insert into issue(?,?,?,?,?,?)";
+			String sql = "insert into issue(idx,title,user_id,up_date,content,available) values(issue_seq.NEXTVAL,?,?,SYSDATE,?,?)";
 			
 			psmt = conn.prepareStatement(sql);
 			
-			psmt.setInt(1, getNext());
-			psmt.setString(2, title);
-			psmt.setString(3, user_id);
-			psmt.setString(4, getDate());
-			psmt.setString(5, content);
-			psmt.setInt(6, 1);	//글의 유효 번호
+			psmt.setString(1, dto.getTitle());
+			psmt.setString(2, dto.getUser_id());
+			psmt.setString(3, dto.getContent());
+			psmt.setInt(4, 1);	//글의 유효 번호
 			
 			return psmt.executeUpdate();
 		} catch (Exception e) {

@@ -27,7 +27,6 @@ public class issueDTO {
 	}
 
 
-
 	public int getNum() {
 		return num;
 	}

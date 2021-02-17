@@ -34,3 +34,6 @@ create table issue (
     primary key(num)        /*기본키를 게시글 번호로 설정*/
 )
 
+CREATE SEQUENCE issue_seq
+    START WITH 1
+    INCREMENT BY 1;

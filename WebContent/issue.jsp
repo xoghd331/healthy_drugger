@@ -18,6 +18,7 @@
 						<div>
 							<h1><a href="main.jsp" id="logo">건강한 약쟁이</a></h1>
 							<p>와 함께 만드는 건강한 습관</p>
+							<input type="button" value="글쓰기" onclick="location.href='issue_write.jsp'"/>
 						</div>
 					</div>
 				</header>
