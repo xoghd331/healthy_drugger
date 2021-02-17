@@ -37,6 +37,6 @@
 						<%} %>
 							
 				</table>		
-			<a href="../main.html" class="button next scrolly">되돌아가기</a>	
+			<a href="../main.jsp" class="button next scrolly">되돌아가기</a>	
 </body>
 </html>
