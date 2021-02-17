@@ -32,10 +32,9 @@
 								<%if(info.getId().equals("admin")) {%> <!-- admin -->
 									<button type="button" class="button" onclick="location='login-join/admin.jsp'">회원정보 관리</button>
 									<button type="button" class="button alt" onclick="location='login-join/update.jsp'">개인정보 수정</button>
-									<button type="button" class="button alt" onclick="location='login-join/logout.jsp'">로그아웃</button>
+									<button type="button" class="button alt" onclick="location='logout'">로그아웃</button>
 								<%}else{%>
 									<button type="button" class="button alt" onclick="location='login-join/update.jsp'">개인정보 수정</button>
-									<a href="logout" >로그아웃</a>
 									<button type="button" class="button alt" onclick="location='logout'">로그아웃</button>
 								<%} %>
 							<%}else{%> <!-- 로그인 실패시  : 로그인, 회원가입 버튼 출력-->
