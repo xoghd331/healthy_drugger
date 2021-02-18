@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+    <%@page import="back.UserDTO"%>
 <!DOCTYPE HTML>
 
 <html>
@@ -9,9 +10,47 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/issue.css" />
 	</head>
-	<body class="is-preload">
+	<body class="is-preload" style="padding-top:0px">
+	
+	<%
+			UserDTO info = (UserDTO)session.getAttribute("info");
+	%>
+	
 		<div id="page-wrapper">
-
+		<!-- 카테고리 Nav -->
+			<nav id="nav">
+				<ul>
+					<li><a href="main.jsp">Home</a></li>
+					<li>
+						<a href="#">커뮤니티</a>
+						<ul>
+							<li><a href="#">자유게시판</a></li>
+							<li><a href="#">Q&A</a></li>
+						</ul>
+					</li>
+					<li><a href="left-sidebar.html">영양제 검색</a></li>						<li><a href="right-sidebar.html">미정</a></li>
+					<li class="current"><a href="issue.html">건강 이슈</a></li>
+				</ul>
+					
+			<!-- 로그인 회원가입 버튼 -->
+				<ul style="position:absolute ; top:0px;right:0px">
+					<%if(info != null){ %> <!-- 로그인 성공 -->
+						<%if(info.getId().equals("admin")) {%> <!-- admin -->
+							<li><button type="button" class="buttonjoin" onclick="location='login-join/admin.jsp'">회원정보 관리</button></li>
+							<li><button type="button" class="buttonjoin" onclick="location='login-join/update.jsp'">개인정보 수정</button></li>
+							<li><button type="button" class="buttonlog" onclick="location='logout'">로그아웃</button><li>
+						<%}else{%>
+							<li><button type="button" class="buttonjoin" onclick="location='login-join/update.jsp'">개인정보 수정</button></li>
+							<li><button type="button" class="buttonlog" onclick="location='logout'">로그아웃</button></li>
+						<%} %>
+					<%}else{%> <!-- 로그인 실패시  : 로그인, 회원가입 버튼 출력-->
+					<!-- <a href="#menu">로그인</a> -->
+						<li><button type="button" class="buttonlog" onclick="location='login-join/login.jsp'">로그인</button></li>
+						<li><button type="button" class="buttonjoin" onclick="location='login-join/join.jsp'">회원가입</button></li>
+					<%} %>
+				</ul>
+			</nav>
+			
 			<!-- Header -->
 				<header id="header">
 					<div class="logo container">
@@ -24,22 +63,7 @@
 					</div>
 				</header>
 
-			<!-- 카테고리 Nav -->
-				<nav id="nav">
-					<ul>
-						<li><a href="main.jsp">Home</a></li>
-						<li>
-							<a href="#">커뮤니티</a>
-							<ul>
-								<li><a href="#">자유게시판</a></li>
-								<li><a href="#">Q&A</a></li>
-							</ul>
-						</li>
-						<li><a href="left-sidebar.html">영양제 검색</a></li>
-						<li><a href="right-sidebar.html">미정</a></li>
-						<li class="current"><a href="issue.html">건강 이슈</a></li>
-					</ul>
-				</nav>
+			
 
 			<!-- 건강이슈 Main -->
 				<section id="main">
