@@ -4,7 +4,7 @@
     pageEncoding="EUC-KR"%>
 <%
 	BoardDTO dto =  new BoardDTO();
-	BoardDAO dao = new BoardDAO();
+	BoardDAO dao = new BoardDAO(); 
 	int idx = Integer.parseInt(request.getParameter("idx"));
 	int pg = Integer.parseInt(request.getParameter("pg"));
 	dto = dao.getBoard(idx);
