@@ -16,7 +16,7 @@
 		
 		
 	</head>
-	<body class="homepage is-preload" style="padding-top:0px">
+	<body class="homepage is-preload" style="padding-top:0px" id="top">
 	
 	<%
 			UserDTO info = (UserDTO)session.getAttribute("info");
@@ -69,7 +69,11 @@
 					</div>
 				</header>
 		</div>
-			
+		
+		<!-- top버튼 -->
+		<a href="#top" style="display: scroll; position: fixed; bottom: 10px; right: 5px;">
+			<img src="images/topPill.png" width="50px" height="70px" alt="" >
+		</a>	
 
 			<!-- 영양제 추천(검색)탭으로 이동하는 Banner -->
 				<section id="banner">
