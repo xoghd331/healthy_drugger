@@ -68,26 +68,6 @@ public class issueDAO {
 		return ""; // 데이터베이스 오류
 	}
 	
-	//게시글 번호 부여
-	public int getNext() {
-		try {
-			conn();
-			//현재 게시글을 내림차순으로 조회하여 가장 마지막 글의 번호를 구한다.
-			String sql = "select num from issue order by num desc";
-			
-			psmt = conn.prepareStatement(sql);
-			rs = psmt.executeQuery();
-			
-			if(rs.next()) {
-				return rs.getInt(1) + 1;
-			}
-			return 1; // 첫 번째 게시물인 경우
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return -1; // 데이터베이스 오류
-	}
-	
 	//글쓰기
 	public int write(issueDTO dto) {
 		try {
@@ -107,5 +87,33 @@ public class issueDAO {
 			e.printStackTrace();
 		}
 		return -1; // 데이터베이스 오류
+	}
+	
+	//게시글 보기
+	public issueDTO getIssueDTO(int idx) {
+		try {
+			conn();
+			
+			String sql = "select * from issue where idx";
+			
+			psmt = conn.prepareStatement(sql);
+			
+			rs = psmt.executeQuery();
+			
+			if (rs.next()) {
+				info.setIdx(rs.getInt(1));
+				info.setTitle(rs.getString(2));
+				info.setUser_id(rs.getString(3));
+				info.setUp_date(rs.getString(4));
+				info.setContent(rs.getString(5));
+				info.setAvailable(rs.getString(6));
+				
+				return info;
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 }

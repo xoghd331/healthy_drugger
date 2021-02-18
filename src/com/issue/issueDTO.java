@@ -2,16 +2,16 @@ package com.issue;
 
 public class issueDTO {
 	
-	private int num;
+	private int idx;
 	private String title;
 	private String user_id;
 	private String up_date;
 	private String content;
 	private String available;
 	
-	public issueDTO(int num, String title, String user_id, String up_date, String content, String available) {
+	public issueDTO(int idx, String title, String user_id, String up_date, String content, String available) {
 		super();
-		this.num = num;
+		this.idx = idx;
 		this.title = title;
 		this.user_id = user_id;
 		this.up_date = up_date;
@@ -27,8 +27,8 @@ public class issueDTO {
 	}
 
 
-	public int getNum() {
-		return num;
+	public int getIdx() {
+		return idx;
 	}
 
 	public String getTitle() {
@@ -51,8 +51,8 @@ public class issueDTO {
 		return available;
 	}
 
-	public void setNum(int num) {
-		this.num = num;
+	public void setIdx(int idx) {
+		this.idx = idx;
 	}
 
 	public void setTitle(String title) {
@@ -74,5 +74,7 @@ public class issueDTO {
 	public void setAvailable(String available) {
 		this.available = available;
 	}
+
+
 
 }
