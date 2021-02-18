@@ -16,65 +16,69 @@
 		
 		
 	</head>
-	<body class="homepage is-preload">
+	<body class="homepage is-preload" style="padding-top:0px">
 	
 	<%
 			UserDTO info = (UserDTO)session.getAttribute("info");
 	%>
 		
 		<div id="page-wrapper">
-
+		<!-- 카테고리 탭 생성하는 코드 : Nav -->
+			<nav id="nav">
+				<ul>
+					<li class="current"><a href="main.jsp">Home</a></li>
+					<li>
+						<a href="#">커뮤니티</a>
+						<ul>
+							<li><a href="#">Lorem ipsum dolor</a></li>
+							<li><a href="#">Magna phasellus</a></li>
+							<li>
+								<a href="#">Phasellus consequat</a>
+								<ul>
+									<li><a href="#">Lorem ipsum dolor</a></li>
+									<li><a href="#">Phasellus consequat</a></li>
+									<li><a href="#">Magna phasellus</a></li>
+									<li><a href="#">Etiam dolore nisl</a></li>
+								</ul>
+							</li>
+							<li><a href="#">Veroeros feugiat</a></li>
+						</ul>
+						</li><!-- 커뮤니티  탭 -->
+					<li><a href="left-sidebar.html">영양제 검색</a></li>
+					<li><a href="right-sidebar.html">건강 이슈</a></li>
+					<li><a href="issue.jsp">건강 이슈</a></li>
+				</ul><!-- 홈탭부터 건강이슈탭까지 -->
+			
+			<!-- 로그인 회원가입 버튼 -->
+				<ul style="position:absolute ; top:0px;right:0px">
+					<%if(info != null){ %> <!-- 로그인 성공 -->
+						<%if(info.getId().equals("admin")) {%> <!-- admin -->
+							<li><button type="button" class="buttonjoin" onclick="location='login-join/admin.jsp'">회원정보 관리</button></li>
+							<li><button type="button" class="buttonjoin" onclick="location='login-join/update.jsp'">개인정보 수정</button></li>
+							<li><button type="button" class="buttonlog" onclick="location='logout'">로그아웃</button><li>
+						<%}else{%>
+							<li><button type="button" class="buttonjoin" onclick="location='login-join/update.jsp'">개인정보 수정</button></li>
+							<li><button type="button" class="buttonlog" onclick="location='logout'">로그아웃</button></li>
+						<%} %>
+					<%}else{%> <!-- 로그인 실패시  : 로그인, 회원가입 버튼 출력-->
+					<!-- <a href="#menu">로그인</a> -->
+						<li><button type="button" class="buttonlog" onclick="location='login-join/login.jsp'">로그인</button></li>
+						<li><button type="button" class="buttonjoin" onclick="location='login-join/join.jsp'">회원가입</button></li>
+					<%} %>
+				</ul>
+			</nav><!-- 내비바 끝 -->
+			
 			<!-- 홈페이지 상단에 웰컴 멘트 : Header -->
 				<header id="header">
 					<div class="logo container">
 						<div>
-						<%if(info != null){ %> <!-- 로그인 성공 -->
-								<%if(info.getId().equals("admin")) {%> <!-- admin -->
-									<button type="button" class="button" onclick="location='login-join/admin.jsp'">회원정보 관리</button>
-									<button type="button" class="button alt" onclick="location='login-join/update.jsp'">개인정보 수정</button>
-									<button type="button" class="button alt" onclick="location='logout'">로그아웃</button>
-								<%}else{%>
-									<button type="button" class="button alt" onclick="location='login-join/update.jsp'">개인정보 수정</button>
-									<button type="button" class="button alt" onclick="location='logout'">로그아웃</button>
-								<%} %>
-							<%}else{%> <!-- 로그인 실패시  : 로그인, 회원가입 버튼 출력-->
-								<!-- <a href="#menu">로그인</a> -->
-								<button type="button" class="button" onclick="location='login-join/login.jsp'">로그인</button>
-								<button type="button" class="button alt" onclick="location='login-join/join.jsp'">회원가입</button>
-							<%} %>
-							<br>
 							<h1><a href="main.jsp" id="logo">건강한 약쟁이와</a></h1>
 							<p>함께 만드는 건강한 습관!</p>
 						</div>
 					</div>
 				</header>
-
-			<!-- 카테고리 탭 생성하는 코드 : Nav -->
-				<nav id="nav">
-					<ul>
-						<li class="current"><a href="main.jsp">Home</a></li>
-						<li>
-							<a href="#">커뮤니티</a>
-							<ul>
-								<li><a href="#">Lorem ipsum dolor</a></li>
-								<li><a href="#">Magna phasellus</a></li>
-								<li>
-									<a href="#">Phasellus consequat</a>
-									<ul>
-										<li><a href="#">Lorem ipsum dolor</a></li>
-										<li><a href="#">Phasellus consequat</a></li>
-										<li><a href="#">Magna phasellus</a></li>
-										<li><a href="#">Etiam dolore nisl</a></li>
-									</ul>
-								</li>
-								<li><a href="#">Veroeros feugiat</a></li>
-							</ul>
-						</li>
-						<li><a href="left-sidebar.html">영양제 검색</a></li>
-						<li><a href="right-sidebar.html">건강 이슈</a></li>
-						<li><a href="issue.jsp">건강 이슈</a></li>
-					</ul>
-				</nav>
+		</div>
+			
 
 			<!-- 영양제 추천(검색)탭으로 이동하는 Banner -->
 				<section id="banner">
