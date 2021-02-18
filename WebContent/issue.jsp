@@ -1,6 +1,10 @@
+<%@page import="com.issue.issueDTO"%>
+<%@page import="com.issue.issueDAO"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-    <%@page import="com.user.UserDTO"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page import="com.user.UserDTO"%>
 <!DOCTYPE HTML>
 
 <html>
@@ -14,6 +18,9 @@
 	
 	<%
 			UserDTO info = (UserDTO)session.getAttribute("info");
+			ArrayList<issueDTO> issueList = new ArrayList<issueDTO>();
+			issueDAO issueDao = new issueDAO();
+			issueList = issueDao.selectIssue();
 	%>
 	
 		<div id="page-wrapper">
@@ -70,15 +77,15 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-12">
+								<input type="button" value="글쓰기" class="write" onclick="location.href='issue_write.jsp'"/>
 								<div class="content">
 
 									<!-- 이슈 Content -->
-
+										<%for(int i = 0; i < issueList.size(); i++) {%>
 										<article class="box page-content">
 											<header>
-												<input type="button" value="글쓰기" class="write" onclick="location.href='issue_write.jsp'"/>
 												<h2>건강 정보</h2>
-												<p>침묵의 장기 신장 어떻게 관리할까?</p>
+												<p><%=issueList.get(i).getTitle() %></p>
 												<ul class="meta">
 													<li class="icon fa-clock">1 hours ago</li>
 													<li class="icon fa-comments"><a href="#">374</a></li>
@@ -86,11 +93,11 @@
 											</header>
 
 											<section>
-												<span class="image featured"><img src="images/issue1.png" alt="" /></span>
+												<span class="image featured"><img src="${pageContext.request.contextPath}/upload/<%=issueList.get(i).getIssueImg() %>" alt="" /></span>
 												
 											</section>
 										</article>
-										
+										<%} %>
 										<article class="box page-content">
 											<header>
 												<h2>건강 정보</h2>

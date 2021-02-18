@@ -23,7 +23,7 @@
     <br>
     </div>
     
-    <form method="post" action="BoardWriteAction.bo" name="boardForm" enctype="multipart/form-data">
+    <form method="post" action="write" enctype="multipart/form-data">
     <table width="700" border="3" bordercolor="lightgray" align="center">
         <tr>
             <td id="title">작성자</td>
@@ -34,7 +34,7 @@
                 제 목
             </td>
             <td>
-                <input name="board_subject" type="text" size="70" maxlength="100" value=""/>
+                <input name="title" type="text" size="70" maxlength="100" value=""/>
             </td>        
         </tr>
         <tr>
@@ -42,7 +42,7 @@
                 내 용
             </td>
             <td>
-                <textarea name="board_content" cols="72" rows="20"></textarea>            
+                <textarea name="content" cols="72" rows="20"></textarea>            
             </td>        
         </tr>
         <tr>
@@ -50,7 +50,7 @@
                 파일첨부
             </td>
             <td>
-                <input type="file" name="board_file" />
+                <input type="file" name="issueImg" />
             </td>    
         </tr>
  

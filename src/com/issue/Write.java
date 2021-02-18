@@ -1,7 +1,13 @@
 package com.issue;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Enumeration;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,6 +16,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.user.UserDTO;
 
 @WebServlet("/write")
@@ -19,16 +27,35 @@ public class Write extends HttpServlet {
 
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
-
+		
+		//String pattenFile = new String("yyyyMMddHHmmss"); //날짜형식을 만든다.
+		//SimpleDateFormat sfFileName = new SimpleDateFormat(pattenFile);
+		//String newFileName = sfFileName.format(new Date()) + "_" + ((int) (Math.random() * 10000)); // 새로운 파일 이름.
+		int size = 1024 * 1024 * 10; //10MB
+		
+		//웹 서버 컨테이너 경로
+		String root = request.getSession().getServletContext().getRealPath("/upload");
+		File folder = new File(root);
+		if(!folder.exists()) {
+			folder.mkdir();
+		}
+		//전송한 파일 저장
+		MultipartRequest multi = new MultipartRequest(request, root, size, "EUC-KR", new DefaultFileRenamePolicy());
+		
+		Enumeration files = multi.getFileNames();
+		String str = (String)files.nextElement();
+		
+		String uploadPath = root+File.separator+multi.getFilesystemName(str);
+		
 		HttpSession session = request.getSession();
 		
 		UserDTO info = (UserDTO)session.getAttribute("info");
 		
 		String user_id = info.getId();
-		String title = request.getParameter("title");
-		String content = request.getParameter("content");
+		String title = multi.getParameter("title");
+		String content = multi.getParameter("content");
 		
-		issueDTO issue = new issueDTO(title,content,user_id);
+		issueDTO issue = new issueDTO(title,content,user_id,multi.getFilesystemName(str));
 		
 		// 로그인을 한 사람만 글을 쓸 수 있도록 코드를 수정한다
 		if(user_id == null){

@@ -5,6 +5,9 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+
+import com.user.UserDTO;
 
 public class issueDAO {
 
@@ -73,7 +76,7 @@ public class issueDAO {
 		try {
 			conn();
 			
-			String sql = "insert into issue(idx,title,user_id,up_date,content,available) values(issue_seq.NEXTVAL,?,?,SYSDATE,?,?)";
+			String sql = "insert into issue(idx,title,user_id,up_date,content,available,issueimg) values(issue_seq.NEXTVAL,?,?,SYSDATE,?,?,?)";
 			
 			psmt = conn.prepareStatement(sql);
 			
@@ -81,6 +84,7 @@ public class issueDAO {
 			psmt.setString(2, dto.getUser_id());
 			psmt.setString(3, dto.getContent());
 			psmt.setInt(4, 1);	//글의 유효 번호
+			psmt.setString(5, dto.getIssueImg());
 			
 			return psmt.executeUpdate();
 		} catch (Exception e) {
@@ -117,8 +121,82 @@ public class issueDAO {
 		return null;
 	}
 	
-	//글 수정
-	public void update() {
+public ArrayList<issueDTO> selectIssue(){
 		
+		ArrayList<issueDTO> list = new ArrayList<issueDTO>();
+		
+		try {
+			conn();
+			
+			String sql = "select * from issue order by idx desc";
+			
+			psmt = conn.prepareStatement(sql);
+			
+			rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+				int idx = rs.getInt("idx");
+				String title = rs.getString("title");
+				String user_id = rs.getString("user_id");
+				String up_date = rs.getString("up_date");
+				String content = rs.getString("content");
+				String available = rs.getString("available");
+				String issueimg = rs.getString("issueimg");
+				
+				dto = new issueDTO(idx, title, user_id, up_date, content, available, issueimg);
+				list.add(dto);
+			}
+		}
+		catch(SQLException e){
+			e.printStackTrace();
+		}
+		finally {
+			close();
+		}
+		return list;
+	}
+	
+	//글 수정
+	public int update(issueDTO dto) {
+		try {
+			conn();
+			
+			String sql = "update issue set title=?, content=?, where idx=?";
+			
+			psmt = conn.prepareStatement(sql);
+			
+			psmt.setString(1, dto.getTitle());
+			psmt.setString(2, dto.getContent());
+			psmt.setInt(3, dto.getIdx());
+			
+			cnt = psmt.executeUpdate();
+			
+		} catch(SQLException e){
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return cnt;
+	}
+	
+	//글 삭제
+	public int delete(issueDTO dto) {
+		try {
+			conn();
+			
+			String sql = "delete";
+			
+			psmt = conn.prepareStatement(sql);
+			
+
+			
+			cnt = psmt.executeUpdate();
+			
+		} catch(SQLException e){
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return cnt;
 	}
 }

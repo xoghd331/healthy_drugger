@@ -12,11 +12,11 @@ select * from user_info
 create table pills(
 	name varchar2(100),			/*  약 이름  */
 	brand varchar2(80),			/*  브랜드   */
-	gender varchar2(40),		/*  성별      */
+	gender varchar2(40),		/*  성별     */
 	age varchar2(30),			/*  연령대   */
-	ingredient varchar2(1500),	/*  성분      */
-	efficacy varchar2(100),		/*  효능      */
-	price varchar2(20),			/*  가격      */
+	ingredient varchar2(1500),	/*  성분     */
+	efficacy varchar2(100),		/*  효능     */
+	price varchar2(20),			/*  가격     */
 	note varchar2(200)			/* 주의 사항 */
 )
 
@@ -34,6 +34,7 @@ create table issue (
     primary key(num)        /*기본키를 게시글 번호로 설정*/
 )
 
+alter table issue add issueimg varchar2(2000)
 alter table issue rename column num to IDX
 
 CREATE SEQUENCE issue_seq
