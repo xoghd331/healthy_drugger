@@ -273,7 +273,10 @@ if (size2 < 0) {
 				<input type = "text" name = "inputSearch">
 				<input type = "submit" name = "btnSearch" value = "검색">
 			</td>
-			<td align = "right"><input type = button value = "글쓰기" OnClick = "window.location='Write.jsp'"></td>
+			<td align = "right">
+				<input type = button value = "글쓰기" OnClick = "window.location='Write.jsp'">
+				<input type = button value = "메인화면" OnClick = "window.location='../main.jsp'">	
+			</td>
 		</tr>
 		</form>
 	</table>
