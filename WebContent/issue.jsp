@@ -4,10 +4,10 @@
 
 <html>
 	<head>
-		<title>No Sidebar - TXT by HTML5 UP</title>
+		<title>Healthy News</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/issue.css" />
 	</head>
 	<body class="is-preload">
 		<div id="page-wrapper">
@@ -16,10 +16,11 @@
 				<header id="header">
 					<div class="logo container">
 						<div>
-							<h1><a href="main.jsp" id="logo">건강한 약쟁이</a></h1>
-							<p>와 함께 만드는 건강한 습관</p>
-							<input type="button" value="글쓰기" onclick="location.href='issue_write.jsp'"/>
+							<a href="main.jsp" id="logo">
+								<img src="images/logo2.png" width="100%" height="130%">
+							</a>
 						</div>
+						
 					</div>
 				</header>
 
@@ -51,6 +52,7 @@
 
 										<article class="box page-content">
 											<header>
+												<input type="button" value="글쓰기" class="write" onclick="location.href='issue_write.jsp'"/>
 												<h2>건강 정보</h2>
 												<p>침묵의 장기 신장 어떻게 관리할까?</p>
 												<ul class="meta">
