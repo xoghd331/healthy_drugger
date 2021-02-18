@@ -12,7 +12,7 @@ public class issueDAO {
 	PreparedStatement psmt =null;
 	Connection conn = null;
 	ResultSet rs = null;
-	issueDTO info = null;
+	issueDTO dto = null;
 	
 	public void conn() {
 		try {
@@ -101,19 +101,24 @@ public class issueDAO {
 			rs = psmt.executeQuery();
 			
 			if (rs.next()) {
-				info.setIdx(rs.getInt(1));
-				info.setTitle(rs.getString(2));
-				info.setUser_id(rs.getString(3));
-				info.setUp_date(rs.getString(4));
-				info.setContent(rs.getString(5));
-				info.setAvailable(rs.getString(6));
+				dto.setIdx(rs.getInt(1));
+				dto.setTitle(rs.getString(2));
+				dto.setUser_id(rs.getString(3));
+				dto.setUp_date(rs.getString(4));
+				dto.setContent(rs.getString(5));
+				dto.setAvailable(rs.getString(6));
 				
-				return info;
+				return dto;
 			}
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return null;
+	}
+	
+	//±Û ¼öÁ¤
+	public void update() {
+		
 	}
 }

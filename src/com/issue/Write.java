@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import back.UserDTO;
+import com.user.UserDTO;
 
 @WebServlet("/write")
 public class Write extends HttpServlet {
@@ -21,12 +21,15 @@ public class Write extends HttpServlet {
 		response.setContentType("text/html; charset=UTF-8");
 
 		HttpSession session = request.getSession();
+		
 		UserDTO info = (UserDTO)session.getAttribute("info");
+		
 		String user_id = info.getId();
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
 		
 		issueDTO issue = new issueDTO(title,content,user_id);
+		
 		// 로그인을 한 사람만 글을 쓸 수 있도록 코드를 수정한다
 		if(user_id == null){
 			PrintWriter script = response.getWriter();

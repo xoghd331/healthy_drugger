@@ -1,4 +1,4 @@
-package back;
+package com.pills;
 
 public class PillsDTO {
 	
