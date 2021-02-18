@@ -11,8 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import back.UserDTO;
-import back.issueDAO;
-import back.issueDTO;
 
 @WebServlet("/write")
 public class Write extends HttpServlet {

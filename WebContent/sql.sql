@@ -34,6 +34,8 @@ create table issue (
     primary key(num)        /*기본키를 게시글 번호로 설정*/
 )
 
+alter table issue rename column num to IDX
+
 CREATE SEQUENCE issue_seq
     START WITH 1
     INCREMENT BY 1;

@@ -1,4 +1,4 @@
-package back;
+package com.issue;
 
 public class issueDTO {
 	
