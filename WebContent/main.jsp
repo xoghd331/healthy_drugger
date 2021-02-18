@@ -243,11 +243,11 @@
 																	dolor sit non aliquet sed, tempor et dolor. Praesent a dapibus velit. Curabitur
 																	accumsan.
 																</p>
-																<button type="button" class="button" onclick="location='community/Write.jsp'">글쓰러 가기</button>
+																<button type="button" class="button" onclick="location='Community/Write2.jsp'">글쓰러 가기</button>
 																<!-- <input type = button value = "글쓰기" onclick = "location='Write.jsp'">
 																  <a href="#" class="button">글쓰러 가기</a>
 																-->
-																<button type="button" class="button" onclick="location.href='no-sidebar.html' ">게시판으로 이동</button>
+																<button type="button" class="button" onclick="location='Community/List2.jsp' ">게시판으로 이동</button>
 															</article>
 
 													</div>
