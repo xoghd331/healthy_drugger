@@ -33,7 +33,7 @@
 </head>
 <body>
 	<table>
-	<form name = Modifyform method = post action = "DeleteServiceCon">	
+	<form name = Modifyform method = post action = "../DeleteServiceCon">	
 			<tr>
 				<td>
 					<table width = "100%" cellpadding = "0" cellspacing = "0" border = "0">

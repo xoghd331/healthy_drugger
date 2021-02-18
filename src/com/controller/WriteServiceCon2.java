@@ -22,6 +22,11 @@ public class WriteServiceCon2 extends HttpServlet {
 		String title = request.getParameter("b_title");
 		String content = request.getParameter("b_content");
 		
+		System.out.println(username);
+		System.out.println(password);
+		System.out.println(title);
+		System.out.println(content);
+		
 		BoardDAO dao = new BoardDAO();
 		BoardDTO dto = new BoardDTO(username, password, title, content);
 		
@@ -33,7 +38,7 @@ public class WriteServiceCon2 extends HttpServlet {
 			System.out.println("글 작성 실패");
 		}
 		
-		response.sendRedirect("List2.jsp");
+		response.sendRedirect("Community/List2.jsp");
 	}
 
 }

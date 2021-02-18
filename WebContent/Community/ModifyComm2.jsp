@@ -43,7 +43,7 @@
 </head>
 <body>
 	<table>
-	<form name = CommModifyform method = post action = "CommModifyServiceCon">	
+	<form name = CommModifyform method = post action = "../CommModifyServiceCon">	
 			<tr>
 				<td>
 					<table width = "100%" cellpadding = "0" cellspacing = "0" border = "0">

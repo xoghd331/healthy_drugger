@@ -45,7 +45,7 @@
 </head>
 <body>
 	<table>
-	<form name = Modifyform method = post action = "ModifyServiceCon">	
+	<form name = Modifyform method = post action = "../ModifyServiceCon">	
 			<tr>
 				<td>
 					<table width = "100%" cellpadding = "0" cellspacing = "0" border = "0">
