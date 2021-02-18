@@ -30,22 +30,11 @@
 					<li>
 						<a href="#">커뮤니티</a>
 						<ul>
-							<li><a href="#">Lorem ipsum dolor</a></li>
-							<li><a href="#">Magna phasellus</a></li>
-							<li>
-								<a href="#">Phasellus consequat</a>
-								<ul>
-									<li><a href="#">Lorem ipsum dolor</a></li>
-									<li><a href="#">Phasellus consequat</a></li>
-									<li><a href="#">Magna phasellus</a></li>
-									<li><a href="#">Etiam dolore nisl</a></li>
-								</ul>
-							</li>
-							<li><a href="#">Veroeros feugiat</a></li>
+							<li><a href="#">자유게시판</a></li>
+							<li><a href="#">Q&A</a></li>
 						</ul>
-						</li><!-- 커뮤니티  탭 -->
+					</li><!-- 커뮤니티  탭 -->
 					<li><a href="left-sidebar.html">영양제 검색</a></li>
-					<li><a href="right-sidebar.html">건강 이슈</a></li>
 					<li><a href="issue.jsp">건강 이슈</a></li>
 				</ul><!-- 홈탭부터 건강이슈탭까지 -->
 			
@@ -72,8 +61,9 @@
 				<header id="header">
 					<div class="logo container">
 						<div>
-							<h1><a href="main.jsp" id="logo">건강한 약쟁이와</a></h1>
-							<p>함께 만드는 건강한 습관!</p>
+							<a href="main.jsp" id="logo">
+								<img src="images/logo2.png" width="100%" height="130%">
+							</a>
 						</div>
 					</div>
 				</header>
