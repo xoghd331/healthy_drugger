@@ -14,6 +14,10 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+<<<<<<< HEAD
 	<classpathentry kind="lib" path="C:/Users/Chosun/Downloads/jstl-1.2.jar"/>
+=======
+	<classpathentry kind="lib" path="C:/oraclexe/app/oracle/product/11.2.0/server/jdbc/lib/jstl-1.2.jar"/>
+>>>>>>> branch 'master' of https://github.com/xoghd331/healthy_drugger.git
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

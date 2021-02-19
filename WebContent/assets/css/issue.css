@@ -2364,14 +2364,27 @@ input, select, textarea {
 /* Header 로고 설정*/
 
 	#header {
-		background: #b1ddab;
 		text-align: center;
+		font-size: 1em;
+		text-transform: uppercase;
+		padding: 3em 0 0 0;
+		margin: 0 auto;
+		background: #b1ddab;
 	}
 
 	#header .logo div {
 		background: #b1ddab;
 		position: relative;
 		display: inline-block;
+		padding: 0 1.5em 0 1.5em;
+		top: -0.65em;
+	}
+	
+	#header .logo {
+		position: relative;
+		text-align: center;
+		border-top: solid 5px #e7eae8;
+		top: 0.65em;
 	}
 
 /* Nav */
