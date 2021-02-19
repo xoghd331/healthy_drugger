@@ -69,17 +69,16 @@
 			<img src="images/topPill.png" width="50px" height="70px" alt="" >
 		</a>	
 
-			<!-- 영양제 추천(검색)탭으로 이동하는 Banner -->
-				<section id="banner">
-					<div class="content">
-						<h2>나에게 꼭 맞는 영양제는 무엇일까?</h2>
-						<p>아래 버튼을 클릭해서 영양제 추천을 받아보세요</p>
-						<a href="#main" class="button scrolly">GO</a>
-					</div>
-				</section>
-
 			<!-- Main -->
 				<section id="main">
+					<!-- 영양제 추천(검색)탭으로 이동하는 Banner -->
+					<section id="banner">
+						<div class="content">
+							<h2>나에게 꼭 맞는 영양제는 무엇일까?</h2>
+							<p>아래 버튼을 클릭해서 영양제 추천을 받아보세요</p>
+							<a href="#main" class="button scrolly">GO</a>
+						</div>
+					</section>
 					<div class="container">
 						<div class="row gtr-200">
 
