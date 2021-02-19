@@ -85,7 +85,7 @@
 										<article class="box page-content">
 											<header>
 												<h2>건강 정보</h2>
-												<p><%=issueList.get(i).getTitle() %></p>
+												<p href="WriteView"><%=issueList.get(i).getTitle() %></p>
 												<ul class="meta">
 													<li class="icon fa-clock">1 hours ago</li>
 													<li class="icon fa-comments"><a href="#">374</a></li>
@@ -93,7 +93,7 @@
 											</header>
 
 											<section>
-												<span class="image featured"><img src="${pageContext.request.contextPath}/upload/<%=issueList.get(i).getIssueImg() %>" alt="" /></span>
+												<span class="image featured" href="WriteView"><img src="${pageContext.request.contextPath}/upload/<%=issueList.get(i).getIssueImg() %>" alt="" /></span>
 												
 											</section>
 										</article>

@@ -86,6 +86,11 @@ public class issueDAO {
 			psmt.setInt(4, 1);	//글의 유효 번호
 			psmt.setString(5, dto.getIssueImg());
 			
+			System.out.println(dto.getTitle());
+			System.out.println(dto.getUser_id());
+			System.out.println(dto.getContent());
+			System.out.println(dto.getIssueImg());
+			
 			return psmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -98,9 +103,11 @@ public class issueDAO {
 		try {
 			conn();
 			
-			String sql = "select * from issue where idx";
+			String sql = "select * from issue where idx = ?";
 			
 			psmt = conn.prepareStatement(sql);
+			
+			psmt.setInt(1, idx);
 			
 			rs = psmt.executeQuery();
 			
