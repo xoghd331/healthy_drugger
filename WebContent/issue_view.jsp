@@ -1,7 +1,9 @@
 <%@page import="com.issue.issueDTO"%>
 <%@page import="com.user.UserDTO"%>
+<%@page import="com.user.UserDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.io.PrintWriter" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,40 +28,52 @@
 						<th colspan="2" style="background-color: #eeeeee; text-align: center;">게시판 글 보기</th>
 					</tr>
 				</thead>
-				<tbody>
+				<tbody >
 					<tr>
 						<td style="width: 20%;">글 제목</td>
-						<td colspan="2"><%= dto.getTitle()
-// 						.replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>") 
-						%></td>
+						<td colspan="2">
+						
+<%-- 							<%= dto.getTitle().replaceAll(" ", "&nbsp;") --%>
+<%--  								.replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>") %> --%>
+						
+						</td>
 					</tr>
 					<tr>
 						<td>작성자</td>
-						<td colspan="2"><%= dto.getUser_id() %></td>
+						<td colspan="2">
+						
+<%--  							<%= dto.getUser_id() %> --%>
+						
+						</td>
 					</tr>
 					<tr>
 						<td>작성일자</td>
-						<td colspan="2"><%= dto.getUp_date().substring(0, 11) + dto.getUp_date().substring(11, 13) + "시"
-								+ dto.getUp_date().substring(14, 16) + "분" %></td>
+						<td colspan="2">
+						
+<%--  							<%= dto.getUp_date().substring(0, 11) + dto.getUp_date().substring(11, 13) + "시" --%>
+<%-- 								+ dto.getUp_date().substring(14, 16) + "분" %> --%>
+						
+						</td>
 					</tr>
 					<tr>
 						<td>내용</td>
-						<td colspan="2" style="height: 200px; text-align: left;"><%= dto.getContent().replaceAll(" ", "&nbsp;")
-							.replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>") %></td>
+						<td colspan="2" style="height: 200px; text-align: left;">
+						
+<%-- 							<%= dto.getContent().replaceAll(" ", "&nbsp;") --%>
+<%--  								.replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>") %> --%>
+						
+						</td>
 					</tr>
 				</tbody>
 			</table>
 			<a href="bbs.jsp" class="btn btn-primary">목록</a>
 			
-			<!-- 해당 글의 작성자가 본인이라면 수정과 삭제가 가능하도록 코드 추가 -->
-			<%
-				if(info.getId().equals("admin")) {
-			%>
-					<a href="update.jsp" class="btn btn-primary">수정</a>
-					<a href="deleteAction.jsp" class="btn btn-primary">삭제</a>
-			<%
-				}
-			%>
+			<!-- 해당 글의 작성자가 관리자라면 수정과 삭제가 가능하도록 코드 추가 -->
+<%-- 			<%if(info.getId().equals("admin")) {%> --%>
+<!-- 					<a href="updateissue.jsp" class="btn btn-primary">수정</a> -->
+<!-- 					<a href="deleteissue.jsp" class="btn btn-primary">삭제</a> -->
+<%-- 			<%}	%> --%>
+			
 		</div>
 	</div>
 	<!-- 게시판 글 보기 양식 영역 끝 -->

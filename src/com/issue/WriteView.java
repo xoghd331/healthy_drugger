@@ -39,12 +39,13 @@ public class WriteView extends HttpServlet {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
 			script.println("alert('유효하지 않은 글입니다')");
-			script.println("location.href='issue.jsp'");
+			script.println("location.href='issue_view.jsp'");
 			script.println("</script");
 		}
 		
 		// 유효한 글이라면 구체적인 정보를 'dto'라는 인스턴스에 담는다
 		issueDTO dto = new issueDAO().getIssueDTO(idx);
+		
 	
 	}
 
